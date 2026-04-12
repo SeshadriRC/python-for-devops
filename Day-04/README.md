@@ -18,6 +18,56 @@ print(message)
 
 In this example, `greet` is a function that takes a `name` argument and returns a greeting message.
 
+
+**Not recommended**
+
+```python
+num1=5
+num2=10
+addition=num1+num2
+print("The addition of is " + str(addition))
+
+subtraction=num1-num2
+print("The subtraction of", num1, "and", num2, "is", subtraction)
+
+```
+
+**Recommended approach**
+
+```python
+num1=10
+num2=5
+
+def addition():
+    add = num1 + num2
+    print(add)
+
+def subtraction():
+    s = num1 - num2
+    print(s)
+
+def multiplication():
+    m = num1 * num2
+    print(m)
+
+# once we write the functions we need to call them to execute the code
+addition()
+subtraction()   
+multiplication()
+
+
+def greet(name):
+    return f"Hello, {name}!"
+
+message = greet("Alice")
+print(message)
+```
+
+- Functions improve **readability, reusability (or modularity), and debugging**
+- DevOps Use Case: Functions allow you to break down large tasks—like managing AWS resources like S3 buckets or EC2 instances—into smaller, manageable blocks of logic (29:14 - 31:43).
+
+---
+
 ### Modules
 
 A module is a Python script containing Python code. It can define functions, classes, and variables that can be used in other Python scripts. Modules help organize and modularize your code, making it more maintainable.
