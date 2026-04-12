@@ -20,7 +20,7 @@ In this example, `greet` is a function that takes a `name` argument and returns 
 
 
 **Not recommended**
-
+*filname*: calculator.py
 ```python
 num1=5
 num2=10
@@ -33,6 +33,7 @@ print("The subtraction of", num1, "and", num2, "is", subtraction)
 ```
 
 **Recommended approach**
+*filname*: calculator-new.py
 
 ```python
 num1=10
@@ -64,7 +65,40 @@ print(message)
 ```
 
 - Functions improve **readability, reusability (or modularity), and debugging**
+- Why use functions?
+
+    - Readability: They help organize your code into logical sections rather than a long, linear script (4:09).
+    - Reusability: You can write a function once and use it across different parts of your program or even in other files (4:47).
+    - Debugging: If an error occurs, you know exactly which function contains the problematic logic, making it much easier to troubleshoot (24:18).
+
 - DevOps Use Case: Functions allow you to break down large tasks—like managing AWS resources like S3 buckets or EC2 instances—into smaller, manageable blocks of logic (29:14 - 31:43).
+
+**Most Recommended approach**
+
+- Functions are most efficient when they accept inputs (parameters), process them, and use the return keyword to send back an output (41:37).
+
+```python
+def addition(num1, num2):
+    add = num1 + num2
+    return add  # sends the value back to the caller (function result)
+
+def subtraction(num1, num2):
+    s = num1 - num2
+    print(s)  # just displays output on the screen, nothing is sent back to the caller
+
+def multiplication(num1, num2):
+    m = num1 * num2
+    print(m)
+
+# Below we are calling the functions with arguments to execute the code
+print(addition(10, 5))
+print(subtraction(10, 5)) 
+multiplication(10, 5)
+
+```
+
+<img width="1410" height="973" alt="image" src="https://github.com/user-attachments/assets/5ca72e73-4861-4775-b681-b51de82f1f75" />
+
 
 ---
 
@@ -77,7 +111,7 @@ A module is a Python script containing Python code. It can define functions, cla
 Suppose you have a Python file named `my_module.py`:
 
 ```python
-# my_module.py
+# my_module.py , make sure filname using underscore. If you use any different character (-), then while calling it won't work.
 def square(x):
     return x ** 2
 
@@ -87,7 +121,7 @@ pi = 3.14159265
 You can use this module in another script:
 
 ```python
-import my_module
+import my_module                
 
 result = my_module.square(5)
 print(result)
@@ -95,6 +129,9 @@ print(my_module.pi)
 ```
 
 In this case, `my_module` is a Python module containing the `square` function and a variable `pi`.
+
+<img width="1246" height="298" alt="image" src="https://github.com/user-attachments/assets/930847ec-33ef-41e9-a268-02f53d89a1d3" />
+
 
 ### Packages
 
