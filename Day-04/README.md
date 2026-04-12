@@ -186,6 +186,14 @@ Python workspaces refer to the environment in which you develop and run your Pyt
 
 Python workspaces can be local or virtual environments. A local environment is the system-wide Python installation, while a virtual environment is an isolated environment for a specific project. You can create virtual environments using tools like `virtualenv` or `venv`.
 
+- As explained in the video (1:00:12 - 1:07:40), it is essential for DevOps engineers because it solves dependency conflicts when working on multiple projects that might require different versions of the same library or module.
+
+Key points about Virtual Environments:
+
+   - Isolated workspaces: By creating a virtual environment for each project, you ensure that the packages installed for one project do not conflict with those of another (1:02:49 - 1:03:02).
+
+   - Project-specific dependencies: You can install specific versions of libraries (e.g., Jira version 1.2.3 vs 1.5.6) within their respective virtual environments without affecting your global Python installation or other project folders (1:05:33 - 1:06:06).
+
 **Example:**
 
 ```bash
@@ -213,3 +221,11 @@ source myenv/bin/activate
 ```
 
 Once activated, you work in an isolated workspace with its Python interpreter and library dependencies.
+
+- So here we created two venv `myenv` and `myenv-2`. And installed `Jira` only in `myenv`, so it will be there only in `myenv` not on other `myenv-2`
+
+<img width="327" height="691" alt="image" src="https://github.com/user-attachments/assets/8583507e-c208-42a4-9675-1aaa3b9df2fd" />
+
+<img width="367" height="653" alt="image" src="https://github.com/user-attachments/assets/be784e8f-a565-4f57-a79d-0e0a759fbe40" />
+
+---
