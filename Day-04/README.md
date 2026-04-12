@@ -189,11 +189,24 @@ Python workspaces can be local or virtual environments. A local environment is t
 **Example:**
 
 ```bash
+# Install virtual env
+pip install virtualenv
+
+---
 # Create a virtual environment
 python -m venv myenv
 
+user@LAPTOP-QMBUJPPJ MINGW64 /e/my-git/python-for-devops/Day-04 (main)
+$ ls
+__pycache__/  calculator.py  calculator_new.py  module-calc.py  myenv/  package.py  README.md
+
+---
+
 # Activate the virtual environment (on Windows)
-myenv\Scripts\activate
+source myenv/Scripts/activate
+
+# To come out of venv
+deactivate
 
 # Activate the virtual environment (on macOS/Linux)
 source myenv/bin/activate
