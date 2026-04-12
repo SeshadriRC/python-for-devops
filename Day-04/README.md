@@ -132,6 +132,7 @@ In this case, `my_module` is a Python module containing the `square` function an
 
 <img width="1246" height="298" alt="image" src="https://github.com/user-attachments/assets/930847ec-33ef-41e9-a268-02f53d89a1d3" />
 
+---
 
 ### Packages
 
