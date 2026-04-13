@@ -7,6 +7,36 @@ Instead of modifying source code to change inputs, you can pass values directly 
 - sys.argv: Arguments are accessed via this list, where `sys.argv[1], sys.argv[2]`, etc., represent the inputs provided after the script name (9:00).
 - Important Note: Python reads these inputs as strings by default, so you must convert them (e.g., using int() or float()) if you intend to perform mathematical operations (15:27 - 17:45).
 
+```python
+import sys
+
+def addition(num1, num2):
+    add = num1 + num2
+    return add  # sends the value back to the caller (function result)
+
+def subtraction(num1, num2):
+    s = num1 - num2
+    print(s)  # just displays output on the screen, nothing is sent back to the caller
+
+def multiplication(num1, num2):
+    m = num1 * num2
+    print(m)
+
+num1=int(sys.argv[1])  # command line arguments are passed as strings, so we need to convert them to integers
+operation = sys.argv[2] # the second command line argument will be the operation we want to perform
+num2=int(sys.argv[3])  # the third command line argument will be the second number
+
+if operation == 'add':
+    result = addition(num1, num2)  # we can store the result of the function in a variable
+    print(result)  # and then print the result
+elif operation == 'sub':
+    result = subtraction(num1, num2)
+    print(result)
+elif operation == 'mul':
+    result = multiplication(num1, num2)
+    print(result)
+```
+
 ---
 
 2. Environment Variables (20:40 - 29:42)
