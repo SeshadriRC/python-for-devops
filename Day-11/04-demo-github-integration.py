@@ -1,6 +1,8 @@
 # Program to demonstrate integration with GitHub to fetch the 
 # details of Users who created Pull requests(Active) on Kubernetes Github repo.
 
+# On the gitbash cli run "pip install requests"
+
 import requests
 
 # URL to fetch pull requests from the GitHub API
