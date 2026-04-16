@@ -22,6 +22,13 @@ set2 = {3, 4, 5, 6}
 union_set = set1.union(set2)  # Union of sets
 intersection_set = set1.intersection(set2)  # Intersection of sets
 difference_set = set1.difference(set2)  # Difference of sets
+
+output:-
+user@LAPTOP-QMBUJPPJ MINGW64 /e/my-git/python-for-devops/Day-11 (main)
+$ py github-integration.py
+Union: {1, 2, 3, 4, 5, 6}
+Intersection: {3, 4}
+Difference: {1, 2}
 ```
 
 #### Subset and Superset:
