@@ -32,8 +32,33 @@ Difference: {1, 2}
 ```
 
 #### Subset and Superset:
+
+**Subset**
+
+- “Is every element of set1 also present in set2?”
+  
+set1 = {1, 2}
+set2 = {1, 2, 3, 4}
+
+set1.issubset(set2)  # True
+
+- Here all elements of set1 (1, 2) are inside set2.
+
+**Superset**
+
+- Does set1 contain all elements of set2?
+- is_superset = set1.issuperset(set2)
+
+set1 = {1, 2, 3, 4}
+set2 = {1, 2}
+
+set1.issuperset(set2)  # True
+
+Because set1 has everything in set2.
+
 ```python
 is_subset = set1.issubset(set2)  # Checking if set1 is a subset of set2
+
 is_superset = set1.issuperset(set2)  # Checking if set1 is a superset of set2
 ```
 
