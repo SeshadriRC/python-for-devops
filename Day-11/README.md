@@ -14,8 +14,9 @@
 
 `second kubernetes` --> is a repo
 
-`/repos/{owner}/{repo}/pulls` -> github code
-`/
+`/repos/{owner}/{repo}/pulls` --> github code
+
+`/repos/kubernetes/kubernetes/pulls` --> Modified code
 
 ```bash
 curl -L \
