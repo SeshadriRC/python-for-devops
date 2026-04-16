@@ -1,7 +1,7 @@
 def update_server_config(file_path, key, value):
     # Read the existing content of the server configuration file
-    with open(file_path, 'r') as file:
-        lines = file.readlines()
+    with open(file_path, 'r') as file:  # open is inbuilt keyword, file is a alias name
+        lines = file.readlines()        # readlines is a inbuilt function
 
     # Update the configuration value for the specified key
     with open(file_path, 'w') as file:
