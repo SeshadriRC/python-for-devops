@@ -18,7 +18,7 @@
 
 `api.github.com/repos/kubernetes/kubernetes/pulls` --> Modified code
 
-- Paste the above  link in browser, we can see the list of dictionaries.
+- Paste the above  link in browser, we can see the list of dictionaries. And every dictionary has list of properties.
 
 <img width="1919" height="938" alt="image" src="https://github.com/user-attachments/assets/d77c18a3-9ac7-4407-9cad-522e745a5571" />
 
