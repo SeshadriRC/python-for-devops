@@ -30,3 +30,17 @@ curl -L \
   -H "X-GitHub-Api-Version: 2026-03-10" \
   https://api.github.com/repos/OWNER/REPO/pulls
 ```
+
+<img width="1752" height="978" alt="image" src="https://github.com/user-attachments/assets/3c405676-d3e6-47d4-ae5b-aefb1a203c4b" />
+
+- We can see its not showing in proper format. so we need to separate it accordingly.
+
+<img width="1917" height="1000" alt="image" src="https://github.com/user-attachments/assets/b775114a-7cc4-434e-87fb-e03731689517" />
+
+
+
+<img width="1577" height="609" alt="image" src="https://github.com/user-attachments/assets/50ea3a30-9f30-4b72-90d7-7abae2ec590c" />
+
+<img width="1919" height="1016" alt="image" src="https://github.com/user-attachments/assets/5a12a189-e068-4611-9cb3-2cd39da91e08" />
+
+
