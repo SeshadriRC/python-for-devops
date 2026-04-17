@@ -3,7 +3,7 @@
 Boto3 is the official Python SDK (Software Development Kit) for AWS (0:20). It serves as a bridge that allows DevOps engineers to interact with AWS APIs to create, manage, and automate resources—such as S3 buckets or EC2 instances—without needing to write complex, low-level code (0:36-4:21).
 
 Ease of Use: It abstracts away complex authentication and API request details, significantly reducing the lines of code required for automation (4:13).
-Core vs. Resource: Abhishek highlights that while developers once used both 'client' and 'resource' interfaces, the client interface (e.g., boto3.client('s3')) is the standard moving forward, as it is more robust (21:51-23:32).
+Client vs Resource: Abhishek highlights that while developers once used both 'client' and 'resource' interfaces, the client interface (e.g., boto3.client('s3')) is the standard moving forward, as it is more robust (21:51-23:32).
 
 ---
 
