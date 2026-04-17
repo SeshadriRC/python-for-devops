@@ -15,3 +15,8 @@ Instead of manually writing complex try/except blocks to handle every possible e
 This simplifies error management in your Python scripts, ensuring your automation remains resilient even when AWS API calls fail or run into permission issues (24:29).
 
 ---
+
+- In this video he explained about above two topics
+- For remaining topics he just attahed the old vide of AWS
+  - [Day-17](https://github.com/SeshadriRC/aws-devops-zero-to-hero/tree/main/day-17)
+  - [Day-18-Cloud-cost-optimization](https://github.com/SeshadriRC/aws-devops-zero-to-hero/tree/main/day-18)
