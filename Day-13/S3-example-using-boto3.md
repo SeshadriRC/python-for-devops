@@ -17,7 +17,7 @@ response = client.get_bucket_acl(
     Bucket='sesha-demo-bucket-boto3',
 )
 
-print (response)
+print (response)  # Output will be in the format of Json, so we need to convert that to Dictionary , so that we can read the value
 
 
 ```
