@@ -13,4 +13,44 @@ Executing the script to test ticket creation.
 
 The second part (scheduled for the next video) will cover converting the script into a Flask web application, hosting it on an EC2 instance, and configuring the GitHub Webhook (13:15-14:50).
 
+<img width="1182" height="583" alt="image" src="https://github.com/user-attachments/assets/5e685c2f-469e-4b3a-8207-b83c8ca22612" />
+
+<img width="1184" height="582" alt="image" src="https://github.com/user-attachments/assets/97ebea65-0c45-4799-90d7-b6a80832a8de" />
+
+<img width="946" height="398" alt="image" src="https://github.com/user-attachments/assets/72b66b25-b438-40ef-bdc0-0d8bfb238564" />
+
 ---
+
+## Step 1: Login to Jira and Create a Project/Space
+
+[url](https://www.atlassian.com/software/jira)
+
+- Signed in using gmail
+
+<img width="1919" height="565" alt="image" src="https://github.com/user-attachments/assets/19b8ac46-dba7-46b5-a184-85e732d33d73" />
+
+- Create a Space
+
+<img width="1919" height="520" alt="image" src="https://github.com/user-attachments/assets/7a9ba5ef-3a0e-4751-bba3-3a14a5655641" />
+
+- Select Scrum
+
+<img width="1268" height="822" alt="image" src="https://github.com/user-attachments/assets/17272e51-def3-4d96-a9b0-19c029dfb5a6" />
+
+- Enter your team name. i entered `my-team`
+
+<img width="1834" height="852" alt="image" src="https://github.com/user-attachments/assets/cb26cd3f-1b05-4911-a434-83b55413c79b" />
+
+   - How your space is managed - `Team managed`
+   - Key - `automatically it will get filled`
+
+<img width="1919" height="858" alt="image" src="https://github.com/user-attachments/assets/173be705-3aba-423e-aab1-76800a579b9b" />
+
+  - click `next` and `next` , then click `i'll do this later`
+
+<img width="1919" height="875" alt="image" src="https://github.com/user-attachments/assets/5badb72e-eccf-4c65-8d4e-17d67e3385d3" />
+
+
+## Step 2: Create a API token in Jira, so that python able to communicate
+
+*Note*: There are 2 ways , we can communicate with Application ( CLI and API ) . So here we are using API method.
