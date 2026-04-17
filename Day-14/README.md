@@ -54,3 +54,8 @@ The second part (scheduled for the next video) will cover converting the script 
 ## Step 2: Create a API token in Jira, so that python able to communicate
 
 *Note*: There are 2 ways , we can communicate with Application ( CLI and API ) . So here we are using API method.
+
+profile --> Account Settings --> Security --> Create API Token --> select date and click create, then copy the token to your notepad
+
+<img width="1908" height="660" alt="image" src="https://github.com/user-attachments/assets/9508d0cf-6946-4834-8442-5c1f643dbd30" />
+
