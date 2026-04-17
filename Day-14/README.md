@@ -50,6 +50,7 @@ The second part (scheduled for the next video) will cover converting the script 
 
 <img width="1919" height="875" alt="image" src="https://github.com/user-attachments/assets/5badb72e-eccf-4c65-8d4e-17d67e3385d3" />
 
+---
 
 ## Step 2: Create a API token in Jira, so that python able to communicate
 
@@ -59,3 +60,14 @@ profile --> Account Settings --> Security --> Create API Token --> select date a
 
 <img width="1908" height="660" alt="image" src="https://github.com/user-attachments/assets/9508d0cf-6946-4834-8442-5c1f643dbd30" />
 
+---
+
+## Step 3: Make an API call
+
+- Search for `Rest API` for Jira in google and get the API code for the project.
+
+
+
+---
+
+---
