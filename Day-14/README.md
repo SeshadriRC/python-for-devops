@@ -66,6 +66,9 @@ profile --> Account Settings --> Security --> Create API Token --> select date a
 
 - Search for `Rest API` for Jira in google and get the API code for the project.
 
+- Copy the `python` code of the below.
+
+[Jira-Get-all-projects-API](https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-projects/#api-rest-api-3-project-get)
 
 
 ---
