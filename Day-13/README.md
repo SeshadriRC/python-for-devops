@@ -18,5 +18,5 @@ This simplifies error management in your Python scripts, ensuring your automatio
 
 - In this video he explained about above two topics
 - For remaining topics he just attahed the old vide of AWS
-  - [Day-17](https://github.com/SeshadriRC/aws-devops-zero-to-hero/tree/main/day-17)
+  - [Day-17-Lambda-explanation](https://github.com/SeshadriRC/aws-devops-zero-to-hero/tree/main/day-17)
   - [Day-18-Cloud-cost-optimization](https://github.com/SeshadriRC/aws-devops-zero-to-hero/tree/main/day-18)
