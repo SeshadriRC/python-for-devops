@@ -62,7 +62,34 @@ profile --> Account Settings --> Security --> Create API Token --> select date a
 
 ---
 
-## Step 3: Make an API call
+## Step 3: Make an API call and list the projects
+
+```python
+# This code sample uses the 'requests' library:
+# http://docs.python-requests.org
+import requests
+from requests.auth import HTTPBasicAuth
+import json
+
+url = "https://my-company.atlassian.net/rest/api/3/project"
+
+API_TOKEN = "ATATT3xFfGF0Pg7bCE57yqPsAAiywjY0kRkXvJ1UvIdJwvRNR7x5nkSZ_ERR1tdshGq7mXxZ1qvJGKjGBsV31Mmod2nqfeyhEtmw4MYJHp-pZCWQYoqtauld21GKnjGt247ZqU_5RSsA05EKeUHx3XM5DiCOwPkJsLE1gLUT6IHUalXEpLSOoTA=69D45E49"
+
+auth = HTTPBasicAuth("seshaec1999@gmail.com", API_TOKEN)
+
+headers = {
+  "Accept": "application/json"
+}
+
+response = requests.request(
+   "GET",
+   url,
+   headers=headers,
+   auth=auth
+)
+
+print(json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators=(",", ": ")))
+```
 
 - Search for `Rest API` for Jira in google and get the API code for the project.
 
@@ -70,7 +97,95 @@ profile --> Account Settings --> Security --> Create API Token --> select date a
 
 [Jira-Get-all-projects-API](https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-projects/#api-rest-api-3-project-get)
 
+<img width="1919" height="528" alt="image" src="https://github.com/user-attachments/assets/da30e4d4-5b79-4653-a25a-065410de278e" />
+
+<img width="1883" height="1007" alt="image" src="https://github.com/user-attachments/assets/adfd5ee4-2343-4957-b102-3da4756066b3" />
+
+- Now its giving all the details of the two projects, so we don't need that.
+
+<img width="1919" height="990" alt="image" src="https://github.com/user-attachments/assets/ed7e043f-e964-46a8-a4ba-0329afbfa84d" />
+
 
 ---
+
+## Step 4: Create an Issue in Jira
+
+- Before creating we need to know the mandatory field. so below are the 4 mandatory fields. However Reporter is taken from the API call, so we can ignore that
+
+<img width="1001" height="717" alt="image" src="https://github.com/user-attachments/assets/176908d9-0883-4745-bc54-b1504c86c397" />
+<img width="986" height="457" alt="image" src="https://github.com/user-attachments/assets/cbbc8f34-3878-4ba6-b852-3d1327b058f2" />
+
+- Now Search for Jira Rest API for create issue.
+
+[Jira-link-create-issue](https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/#api-rest-api-3-issue-post)
+
+- Now Remove the unnecessary lines, below is the final code
+
+```python
+# This code sample uses the 'requests' library:
+# http://docs.python-requests.org
+import requests
+from requests.auth import HTTPBasicAuth
+import json
+
+url = "https://my-company.atlassian.net/rest/api/3/issue"
+
+API_TOKEN = "ATATT3xFfGF0Pg7bCE57yqPsAAiywjY0kRkXvJ1UvIdJwvRNR7x5nkSZ_ERR1tdshGq7mXxZ1qvJGKjGBsV31Mmod2nqfeyhEtmw4MYJHp-pZCWQYoqtauld21GKnjGt247ZqU_5RSsA05EKeUHx3XM5DiCOwPkJsLE1gLUT6IHUalXEpLSOoTA=69D45E49"
+
+auth = HTTPBasicAuth("seshaec1999@gmail.com", API_TOKEN)
+
+headers = {
+  "Accept": "application/json",
+  "Content-Type": "application/json"
+}
+
+payload = json.dumps( {
+  "fields": {
+    "description": {
+      "content": [
+        {
+          "content": [
+            {
+              "text": "My First Jira ticket",
+              "type": "text"
+            }
+          ],
+          "type": "paragraph"
+        }
+      ],
+      "type": "doc",
+      "version": 1
+    },
+    "issuetype": {
+      "id": "10082"  # to find the issuetype, first naviage to particular myspace --> configure board --> left side(worktypes) --> click story --> then in the URL you can able to see the id
+    },
+    "project": {
+      "key": "MST"     # Instead of id, you can also use project key. Ex: "key": "TEST"
+    },
+    "summary": "FIRST JIRA TICKET",
+  },
+  "update": {}
+} )
+
+response = requests.request(
+   "POST",
+   url,
+   data=payload,
+   headers=headers,
+   auth=auth
+)
+
+print(json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators=(",", ": ")))
+
+```
+
+
+- Jira story created
+
+  <img width="1812" height="436" alt="image" src="https://github.com/user-attachments/assets/e348b52a-7433-40b5-bcd4-7bc84eaf8700" />
+
+<img width="1919" height="872" alt="image" src="https://github.com/user-attachments/assets/2b0784db-b8bc-41ca-94f9-2966afbaaa24" />
+
+
 
 ---
