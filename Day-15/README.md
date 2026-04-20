@@ -154,8 +154,28 @@ if __name__ == '__main__':
 
 ## 3. Create a github webhook
 
-```python
+- Created one sample issue in `Devops-concepts` repository
+- Navigate to `Settings` --> `Webhooks` --> `Add webhook`
 
-```
+<img width="1919" height="638" alt="image" src="https://github.com/user-attachments/assets/c17b7707-19de-4783-af54-d76126dadab2" />
+
+- Modify below things
+
+<img width="1907" height="873" alt="image" src="https://github.com/user-attachments/assets/929e63cd-f9f2-49d0-a24a-0d579ee5d88e" />
+
+- select the event as `issue comments` and click `add webhook`. Make sure application is running in background before adding webhook
+
+<img width="1797" height="824" alt="image" src="https://github.com/user-attachments/assets/c8922f22-b46f-4f67-b5c0-7135a53510b9" />
+
+- Im just testing it in laptop first before moving to AWS
+<img width="976" height="190" alt="image" src="https://github.com/user-attachments/assets/47969118-7552-4588-a60e-10b7b3739526" />
+
+<img width="599" height="145" alt="image" src="https://github.com/user-attachments/assets/997b8a9c-3af0-47d8-9996-567d43df97a6" />
+
+- Its not allowing, so im trying in AWS
+<img width="1904" height="506" alt="image" src="https://github.com/user-attachments/assets/9db13226-55d6-4072-a167-470909d35a78" />
+
+
+
 
 ---
