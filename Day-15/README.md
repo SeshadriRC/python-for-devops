@@ -56,7 +56,7 @@ In this project, the Flask API is configured to use the **POST** method because 
 
 # Practicals
 
-## Write a Flask API
+## Write a Sample Hello world Flask API before writing actuall API
 
 - Run the below python code in EC2 instance.
   
@@ -78,3 +78,76 @@ def hello_world():
 
 - Access the URL, it will show the output as `Hello world`.
 - Now Access the URL with `/something`, it will show `Not Found`. How if showing `Not Found`, its because of the `app.route` which we used.
+
+<img width="1244" height="314" alt="image" src="https://github.com/user-attachments/assets/95e42cee-565c-451c-886b-f78188f1b749" />
+
+## Now Write a real Flask API
+
+- We already have the api code which we written in `Day-14` and do some alterations
+
+```python
+# This code sample uses the 'requests' library:
+# http://docs.python-requests.org
+import requests
+from requests.auth import HTTPBasicAuth
+import json
+from flask import Flask             # added extra
+
+# creating a flask app instance
+app = Flask(__name__)               # added extra
+
+@app.route("/createJIRA")           # added extra
+def CreateJIRA():                   # added extra
+
+    url = "https://my-company.atlassian.net/rest/api/3/issue"
+
+    API_TOKEN = "API token"
+
+    auth = HTTPBasicAuth("seshaec1999@gmail.com", API_TOKEN)
+
+    headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json"
+    }
+
+    payload = json.dumps( {
+    "fields": {
+        "description": {
+        "content": [
+            {
+            "content": [
+                {
+                "text": "My First Jira ticket",
+                "type": "text"
+                }
+            ],
+            "type": "paragraph"
+            }
+        ],
+        "type": "doc",
+        "version": 1
+        },
+        "issuetype": {
+        "id": "10082"  # to find the issuetype, first naviage to particular myspace --> configure board --> left side(worktypes) --> click story --> then in the URL you can able to see the id
+        },
+        "project": {
+        "key": "MST"     # Instead of id, you can also use project key. Ex: "key": "TEST"
+        },
+        "summary": "JIRA TICKET created using github",
+    },
+    "update": {}
+    } )
+
+    response = requests.request(
+    "POST",
+    url,
+    data=payload,
+    headers=headers,
+    auth=auth
+    )
+
+    return json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators=(",", ": "))   # Altered
+
+if __name__ == '__main__':
+  app.run("0.0.0.0", port=8080)
+```
