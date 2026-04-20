@@ -53,3 +53,28 @@ In this project, the Flask API is configured to use the **POST** method because 
 - This avoids the need for heavy production servers like **Tomcat** or **WebSphere** during development.
 
 ---
+
+# Practicals
+
+## Write a Flask API
+
+- Run the below python code in EC2 instance.
+  
+```python
+# Install flask
+pip install flask
+
+from flask import Flask    # importing Flask module from the flask package
+
+app = Flask(__name__)  # Its a common line, every flask program will have this. we are creating a flask app instance
+
+@app.route('/')        # A decorator is a shortcut that adds extra functionality to a function using @ syntax. It tells Flask: when someone visits /, run the hello_world() function. It will be used before functions and it will be executed at first.
+def hello_world():
+    return 'Hello, World!'
+    
+    app.run("0.0.0.0")     # Run on the local machine ip address, by default flask application will run on port 5000
+
+```
+
+- Access the URL, it will show the output as `Hello world`.
+- Now Access the URL with `/something`, it will show `Not Found`. How if showing `Not Found`, its because of the `app.route` which we used.
