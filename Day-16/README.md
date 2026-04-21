@@ -233,14 +233,14 @@ Example:
 ```
 file = open('example.txt', 'r')
 content = file.read()
-file.close()
+file.close()                          # We need to use this method , so that file will be closed. This is not the recommended method
 ```
 
 Using with open():
 ```
 with open('example.txt', 'r') as file:
     content = file.read()
-# File is automatically closed when the block exits
+# File is automatically closed when the block exits. This is the recommended method
 ```
 
 
