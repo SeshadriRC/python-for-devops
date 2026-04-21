@@ -80,6 +80,8 @@ source myenv/bin/activate
 
 Decorators modify the behavior of functions. They take a function as an argument, add some functionality, and return another function without modifying the original function's code. Example:
 
+- A login concept using decorators in Python usually means protecting functions/routes so they run only if the user is logged in.
+
 Defining a simple decorator:
 
 ```
