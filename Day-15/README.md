@@ -91,17 +91,34 @@ def hello_world():
 import requests
 from requests.auth import HTTPBasicAuth
 import json
-from flask import Flask             # added extra
+from flask import Flask, request                    # added extra
 
 # creating a flask app instance
-app = Flask(__name__)               # added extra
+app = Flask(__name__)                               # added extra
 
-@app.route("/createJIRA")           # added extra
-def CreateJIRA():                   # added extra
+@app.route('/createJira', methods=['GET', 'POST'])  # added get along with post
+def createJira():
+    if request.method == 'GET':
+        return "Send POST request"                 # added extra
+
+# Read GitHub webhook event type
+    github_event = request.headers.get("X-GitHub-Event")
+
+# Only respond to issue_comment events
+    if github_event != "issue_comment":
+        return "Ignored", 200
+
+# Read the comment text from the webhook payload
+    payload = request.json
+    # The payload structure may vary based on the event type. For issue_comment events, the comment text is typically found in payload["comment"]["body"].
+    comment_text = payload["comment"]["body"].strip().lower()
+
+    if comment_text != "/jira":
+        return "No /jira command found", 200
 
     url = "https://my-company.atlassian.net/rest/api/3/issue"
 
-    API_TOKEN = "API token"
+    API_TOKEN = "write your API token here"   # Generate API token from https://id.atlassian.com/manage-profile/security/api-tokens and use it here
 
     auth = HTTPBasicAuth("seshaec1999@gmail.com", API_TOKEN)
 
@@ -149,7 +166,7 @@ def CreateJIRA():                   # added extra
     return json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators=(",", ": "))   # Altered
 
 if __name__ == '__main__':
-  app.run("0.0.0.0", port=8080)
+  app.run("0.0.0.0", port=5000)
 ```
 
 ## 3. Create a github webhook
