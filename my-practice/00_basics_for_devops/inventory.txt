@@ -1,0 +1,4 @@
+web-01.internal.net
+web-02.internal.net
+db-primary.internal.net
+redis-cache.internal.net
