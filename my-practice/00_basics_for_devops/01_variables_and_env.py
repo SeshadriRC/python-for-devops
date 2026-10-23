@@ -12,8 +12,9 @@ app_name = "payment-gateway"
 replicas = 3
 is_enabled = True
 
-# 2. Reading Environment Variables (just like `os.getenv` or `$VARIABLE` in Bash)
-# If ENVIRONMENT is not set, it defaults to 'development'
+# 2. Reading Environment Variables
+# Bash equivalent: environment="${ENVIRONMENT:-development}"
+# If ENVIRONMENT is not set in your shell/Docker/K8s, it defaults to 'development'
 environment = os.getenv("ENVIRONMENT", "development")
 
 # 3. Printing output (just like `echo`)
