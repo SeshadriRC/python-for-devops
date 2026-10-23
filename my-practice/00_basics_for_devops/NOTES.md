@@ -114,3 +114,86 @@ else:
 ```
 
 > ⚠️ **Key Python Rule**: Python uses **4 spaces (indentation)** instead of `then...fi`. Everything indented under `if` belongs to that block.
+
+
+---
+
+## 📌 Topic 4: What is `{ }` (Curly Braces) in Python?
+
+Curly braces `{}` have two main uses in Python:
+
+### 1. Placeholder inside f-strings (Variable Substitution)
+When you put an `f` before quotes, `{}` tells Python: *"Evaluate the variable inside me!"*
+
+* **In Bash**:
+  ```bash
+  echo "Deploying to server: ${server_name}"
+  ```
+* **In Python**:
+  ```python
+  print(f"Deploying to server: {server_name}")
+  ```
+  If `server_name = "web-01"`, `{server_name}` is replaced with `"web-01"`. Without `{}`, Python would literally print the word `server_name`.
+
+### 2. Dictionaries (Key-Value pairs like JSON or Bash `declare -A`)
+Outside strings, `{}` defines a Dictionary (like a JSON object in Kubernetes manifests or Ansible):
+```python
+server_info = {
+    "hostname": "web-01",
+    "ip": "192.168.1.10",
+    "port": 443
+}
+
+print(server_info["ip"])  # Prints: 192.168.1.10
+```
+
+---
+
+## 📌 Topic 5: What is `\n` in `print("\n...")`?
+
+`\n` represents a **Newline** character (the Enter key).
+
+* **In Bash**:
+  ```bash
+  echo -e "\n--- Checking servers ---"
+  ```
+* **In Python**:
+  ```python
+  print("\n--- Checking servers ---")
+  ```
+The `\n` inserts a blank line above the text in your terminal. It makes DevOps script output much easier to read when scrolling through long CI/CD build logs.
+
+Common escape characters:
+* `\n`: Newline (Enter)
+* `\t`: Tab space (indents text)
+
+---
+
+## 📌 Topic 6: What is `.startswith(...)`?
+
+`.startswith()` is a built-in Python string method that checks if a string begins with specific characters. It returns either `True` or `False`.
+
+### 🧠 The Bash vs Python Comparison
+
+* **In Bash (wildcard match or grep)**:
+  ```bash
+  # Check if server starts with "web"
+  if [[ "$server" == web* ]]; then
+      echo "This is a web server: $server"
+  fi
+  ```
+
+* **In Python**:
+  ```python
+  if server.startswith("web"):
+      print(f"This is a web server: {server}")
+  ```
+
+### Useful DevOps String Methods:
+```python
+server = "k8s-worker-node-01.us-east-1.compute.internal"
+
+server.startswith("k8s")       # Returns True
+server.endswith(".internal")    # Returns True
+"worker" in server             # Returns True (like: echo $server | grep worker)
+```
